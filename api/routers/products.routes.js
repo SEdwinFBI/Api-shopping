@@ -7,10 +7,10 @@ import { validatorHandler } from "../middleware/validator.handler.js";
 const router = Router();
 
 router.get("/api/products",getProducts)
-router.get("/api/products/:id",validatorHandler(getProductSchema,"params"))
-router.post("/api/products",validatorHandler(createProductSchema,"body"))
+router.get("/api/products/:id",validatorHandler(getProductSchema,"params"),getProduct)
+router.post("/api/products",validatorHandler(createProductSchema,"body"),postProduct)
 router.put("/api/products/:id",validatorHandler(getProductSchema,"params"),
-validatorHandler(updateProductSchema,"body"))
+validatorHandler(updateProductSchema,"body"),putProduct)
 router.delete("/api/products/:id",deleteProduct)
 
 
