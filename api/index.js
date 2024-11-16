@@ -1,5 +1,6 @@
 import app from "./app.js";
 
-app.set("port",3000);
+const port = process.env.PORT || 3000
+app.set("port",port);
 
 app.listen(app.get("port"));
